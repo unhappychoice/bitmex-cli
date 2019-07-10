@@ -17,7 +17,7 @@
 #
 # resolver: ./custom-snapshot.yaml
 # resolver: https://example.com/snapshots/2018-01-01.yaml
-resolver: lts-13.26
+resolver: lts-8.5
 
 # User packages to be built.
 # Various formats can be used as shown in the example below.
@@ -30,16 +30,18 @@ resolver: lts-13.26
 #   - wai
 packages:
 - .
+
 # Dependency packages to be pulled from upstream that are not in the resolver.
 # These entries can reference officially published versions as well as
 # forks / in-progress versions pinned to a git hash. For example:
 #
-# extra-deps:
-# - acme-missiles-0.3
-# - git: https://github.com/commercialhaskell/stack.git
-#   commit: e7b331f14bcffb8367cd58fbfc8b40ec7642100a
-#
-# extra-deps: []
+extra-deps:
+  - http-api-data-0.2.4@sha256:d940fc355cb09e4d18d54fe852bb8fd5ad45104d3c84836dd6667260e24a8a14,1894
+  - servant-0.8.1@sha256:03dde6e70749cf8b0f8474ec3f0ccf93525add8c1413138303f1b6b86e749249,4076
+  - servant-client-0.8.1@sha256:c24a3b56e235afd533c75193dd4b245f99e09b7708b730dd74b169de051bca5a,2977
+  - servant-server-0.8.1@sha256:04f76a33facd666ac6466090efe8cdc50ae55cb9833fd0795fa7ddcba726414e,4577
+  - github: unhappychoice/bitmex-servant
+    commit: 7ab063c
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
